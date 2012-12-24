@@ -1,0 +1,5 @@
+syntax: glob
+*/bin/Debug/*
+*/obj/*
+*.DotSettings.user
+*.suo
