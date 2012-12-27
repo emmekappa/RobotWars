@@ -1,8 +1,8 @@
 ﻿namespace RobotWars
 {
     /// <summary>
-    /// The Value Object rappresenting a cartesian coordinate.
-    /// It pretends to be immutable.
+    ///     The Value Object rappresenting a cartesian coordinate.
+    ///     It pretends to be immutable.
     /// </summary>
     public class Coordinate
     {
@@ -15,8 +15,15 @@
             this.y = y;
         }
 
-        public int X { get { return x; } }
-        public int Y { get { return y; } }        
+        public int X
+        {
+            get { return x; }
+        }
+
+        public int Y
+        {
+            get { return y; }
+        }
 
         public Coordinate Clone()
         {

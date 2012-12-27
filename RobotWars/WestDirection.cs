@@ -1,25 +1,25 @@
 ﻿namespace RobotWars
 {
-    internal class WestDirection : IDirection
-    {        
-        public Coordinate MoveForward(Coordinate coordinate)
+    public class WestDirection : DirectionBase
+    {
+        internal override Coordinate MoveForward(Coordinate coordinate)
         {
-            return new Coordinate(coordinate.X-1, coordinate.Y);
+            return new Coordinate(coordinate.X - 1, coordinate.Y);
         }
 
-        public IDirection RotateRight()
+        internal override DirectionBase RotateRight()
         {
-            return new NorthDirection();            
+            return new NorthDirection();
         }
 
-        public IDirection RotateLeft()
+        internal override DirectionBase RotateLeft()
         {
-            return new SouthDirection();            
+            return new SouthDirection();
         }
+
         public override string ToString()
         {
             return "W";
         }
-
     }
 }

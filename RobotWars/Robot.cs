@@ -1,29 +1,34 @@
-﻿namespace RobotWars
+﻿using System;
+
+namespace RobotWars
 {
     /// <summary>
-    /// The Robot entity.    
+    ///     The Robot entity.
     /// </summary>
     public class Robot
     {
-        private Coordinate coordinate;
-        private IDirection direction;
         private readonly Arena arena;
+        private DirectionBase direction;
+        private Coordinate position;
 
-        public Robot(Coordinate coordinate, IDirection direction, Arena arena)
+        public Robot(Coordinate position, DirectionBase direction, Arena arena)
         {
-            this.coordinate = coordinate;
+            this.position = position;
             this.direction = direction;
             this.arena = arena;
         }
 
         public Coordinate Coordinate
         {
-            get { return coordinate.Clone(); }            
+            get { return position.Clone(); }
         }
 
-        public IDirection Direction
+        /// <summary>
+        ///     A string rappresenting the Robot direction
+        /// </summary>
+        public string Direction
         {
-            get { return direction; }
+            get { return direction.ToString(); }
         }
 
         public void RotateLeft()
@@ -35,11 +40,13 @@
         {
             direction = direction.RotateRight();
         }
-        
+
         public void MoveForward()
         {
-            coordinate = direction.MoveForward(coordinate);
+            Coordinate newRobotPosition = direction.MoveForward(position);
+            if (!arena.IsInside(newRobotPosition))
+                throw new InvalidOperationException("Position out of the arena");
+            position = newRobotPosition;
         }
-
-    }    
+    }
 }
