@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace RobotWars.Console
 {
-    public class MovementParser
+    public static class MovementParser
     {
         public static IEnumerable<IMovement> Parse(string input)
         {
-            foreach (char c in input)
-            {
-                yield return CreateMovement(c);
-            }
+            return input.Select(c => CreateMovement(c));
         }
 
         private static IMovement CreateMovement(char character)
