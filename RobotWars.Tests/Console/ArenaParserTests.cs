@@ -1,21 +1,21 @@
-﻿using System;
-using NUnit.Framework;
-using RobotWars.Console;
-using SharpTestsEx;
-
-namespace RobotWars.Tests.Console
+﻿namespace RobotWars.Tests.Console
 {
+    using System;
+    using NUnit.Framework;
+    using RobotWars.Console;
+    using SharpTestsEx;
+
     [TestFixture]
     public class ArenaParserTests
     {
         [Test]
         [TestCase("5 5", 5, 5)]
-        [TestCase("10    5", 10, 5)]        
-        [TestCase("1 1", 1, 1)]        
+        [TestCase("10    5", 10, 5)]
+        [TestCase("1 1", 1, 1)]
         public void Parse_should_return_the_Arena(string inputString, int expectedArenaWidth, int expecredArenaHeight)
         {
-            var arena = ArenaParser.Parse(inputString);
-            
+            Arena arena = ArenaParser.Parse(inputString);
+
             arena.Width.Should().Be.EqualTo(expectedArenaWidth);
             arena.Height.Should().Be.EqualTo(expecredArenaHeight);
         }

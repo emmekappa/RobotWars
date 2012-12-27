@@ -1,11 +1,11 @@
-﻿using System;
-
-namespace RobotWars.Console
+﻿namespace RobotWars.Console
 {
+    using System;
+
     public static class DirectionFactory
     {
         public static DirectionBase Create(string value)
-        {            
+        {
             switch (value.ToUpper())
             {
                 case "N":

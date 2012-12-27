@@ -3,7 +3,7 @@
     public class NorthDirection : DirectionBase
     {
         protected internal override Coordinate MoveForward(Coordinate coordinate)
-        {            
+        {
             return new Coordinate(coordinate.X, coordinate.Y + 1);
         }
 
