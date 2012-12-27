@@ -10,8 +10,20 @@
 
         public Arena(int width, int height)
         {
+            if(width <= 0 || height <= 0)
+                throw new InvalidArenaSizeException();
             this.width = width;
             this.height = height;
+        }
+
+        public int Width
+        {
+            get { return width; }
+        }
+
+        public int Height
+        {
+            get { return height; }
         }
 
         /// <summary>

@@ -53,9 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArenaTests.cs" />
+    <Compile Include="Console\DirectionFactoryTests.cs" />
     <Compile Include="CoordinateTests.cs" />
     <Compile Include="EastDirectionTests.cs" />
     <Compile Include="NorthDirectionTests.cs" />
+    <Compile Include="Console\ArenaParserTests.cs" />
+    <Compile Include="Console\RobotLocationParserTets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RobotTests.cs" />
     <Compile Include="Scenarios\ScenarioATests.cs" />
@@ -64,6 +67,10 @@
     <Compile Include="WestDirectionTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RobotWars.Console\RobotWars.Console.csproj">
+      <Project>{A92B22E0-57E1-45E4-82B2-510B32558AB3}</Project>
+      <Name>RobotWars.Console</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RobotWars\RobotWars.csproj">
       <Project>{F0936BEB-61A2-44CB-993E-C2737AD027EF}</Project>
       <Name>RobotWars</Name>

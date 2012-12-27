@@ -30,7 +30,7 @@ namespace RobotWars.Tests.Scenarios
 
             robotA.Coordinate.X.Should().Be.EqualTo(1);
             robotA.Coordinate.Y.Should().Be.EqualTo(3);
-            robotA.Direction.Should().Be.EqualTo("N");
+            robotA.Direction.Should().Be.OfType<NorthDirection>();
         }
     }
 }
