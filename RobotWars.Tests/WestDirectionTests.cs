@@ -6,18 +6,18 @@ namespace RobotWars.Tests
     [TestFixture]
     public class WestDirectionTests
     {
-        private WestDirection westDirection;
-
         [SetUp]
         public void SetUp()
         {
             westDirection = new WestDirection();
         }
 
+        private WestDirection westDirection;
+
         [Test]
         public void MoveForward_should_decrease_X_coordinate_by_one()
         {
-            var newPosition = westDirection.MoveForward(new Coordinate(5, 5));
+            Coordinate newPosition = westDirection.MoveForward(new Coordinate(5, 5));
 
             newPosition.X
                        .Should().Be.EqualTo(4);
@@ -26,10 +26,24 @@ namespace RobotWars.Tests
         [Test]
         public void MoveForward_should_not_change_Y_coordinate()
         {
-            var newPosition = westDirection.MoveForward(new Coordinate(5, 5));
+            Coordinate newPosition = westDirection.MoveForward(new Coordinate(5, 5));
 
             newPosition.Y
                        .Should().Be.EqualTo(5);
+        }
+
+        [Test]
+        public void RotateLeft_should_return_SouthDirection()
+        {
+            westDirection.RotateLeft()
+                         .Should().Be.OfType<SouthDirection>();
+        }
+
+        [Test]
+        public void RotateRight_should_return_NorthDirection()
+        {
+            westDirection.RotateRight()
+                         .Should().Be.OfType<NorthDirection>();
         }
     }
 }
