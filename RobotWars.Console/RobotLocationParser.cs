@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace RobotWars.Tests.Parser
+namespace RobotWars.Console
 {
     public class RobotLocationParser
     {

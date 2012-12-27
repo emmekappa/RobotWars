@@ -1,10 +1,12 @@
 ﻿using System.Linq;
 using NUnit.Framework;
+using RobotWars.Console;
 using SharpTestsEx;
 
-namespace RobotWars.Tests.Parser
+namespace RobotWars.Tests.Console
 {
-    public class MovementInstructionParserTests
+    [TestFixture]
+    public class MovementParserTests
     {
         [Test]
         public void Should_parse_Movements()

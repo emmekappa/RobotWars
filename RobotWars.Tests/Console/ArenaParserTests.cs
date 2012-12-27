@@ -3,7 +3,7 @@ using NUnit.Framework;
 using RobotWars.Console;
 using SharpTestsEx;
 
-namespace RobotWars.Tests.Parser
+namespace RobotWars.Tests.Console
 {
     [TestFixture]
     public class ArenaParserTests
