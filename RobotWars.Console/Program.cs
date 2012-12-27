@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RobotWars.Console
+﻿namespace RobotWars.Console
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var arena = new Arena(5, 5);
-            var robotA = new Robot(new Coordinate(1, 2), new NorthDirection(), new Arena(5,5));
+            var robotA = new Robot(new Coordinate(1, 2), new NorthDirection(), new Arena(5, 5));
             var robotB = new Robot(new Coordinate(3, 3), new EastDirection(), new Arena(5, 5));
-            
+
             robotA.RotateLeft();
             robotA.MoveForward();
             robotA.RotateLeft();
@@ -22,7 +16,7 @@ namespace RobotWars.Console
             robotA.MoveForward();
             robotA.RotateLeft();
             robotA.MoveForward();
-            robotA.MoveForward();            
+            robotA.MoveForward();
 
             robotB.MoveForward();
             robotB.MoveForward();
@@ -34,9 +28,11 @@ namespace RobotWars.Console
             robotB.RotateRight();
             robotB.RotateRight();
             robotB.MoveForward();
-            
-            System.Console.WriteLine("RobotA X: {0} Y: {1} Facing: {2}", robotA.Coordinate.X, robotA.Coordinate.Y, robotA.Direction);
-            System.Console.WriteLine("RobotA X: {0} Y: {1} Facing: {2}", robotB.Coordinate.X, robotB.Coordinate.Y, robotB.Direction);
+
+            System.Console.WriteLine("RobotA X: {0} Y: {1} Facing: {2}", robotA.Coordinate.X, robotA.Coordinate.Y,
+                                     robotA.Direction);
+            System.Console.WriteLine("RobotA X: {0} Y: {1} Facing: {2}", robotB.Coordinate.X, robotB.Coordinate.Y,
+                                     robotB.Direction);
         }
     }
 }

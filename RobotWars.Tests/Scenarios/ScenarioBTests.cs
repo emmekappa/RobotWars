@@ -7,13 +7,13 @@ namespace RobotWars.Tests.Scenarios
     [Category("Functional")]
     public class ScenarioBTests
     {
-        private Robot robotB;
-
         [SetUp]
-         public void SetUp()
+        public void SetUp()
         {
             robotB = new Robot(new Coordinate(3, 3), new EastDirection(), new Arena(5, 5));
         }
+
+        private Robot robotB;
 
         [Test]
         public void ScenarioB_should_be_satisfy()
@@ -31,7 +31,7 @@ namespace RobotWars.Tests.Scenarios
 
             robotB.Coordinate.X.Should().Be.EqualTo(5);
             robotB.Coordinate.Y.Should().Be.EqualTo(1);
-            robotB.Direction.Should().Be.OfType<EastDirection>();
+            robotB.Direction.Should().Be.EqualTo("E");
         }
     }
 }
