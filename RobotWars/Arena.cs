@@ -2,23 +2,31 @@
 
 namespace RobotWars
 {
+    /// <summary>
+    /// The Arena.
+    /// </summary>
     public class Arena
     {
-        private readonly int maxX;
-        private readonly int maxY;
+        private readonly int width;
+        private readonly int height;
 
-        public Arena(int maxX, int maxY)
-        {
-            robots = new List<Robot>();
-            this.maxX = maxX;
-            this.maxY = maxY;
+        public Arena(int width, int height)
+        {            
+            this.width = width;
+            this.height = height;
         }
+        
+        /// <summary>
+        /// Checks if a coordinate is inside the Arena or not.
+        /// </summary>
+        /// <param name="coordinate">The coordinate to check.</param>
+        /// <returns>true when the coordinate is inside the arena.</returns>
+        public bool IsInside(Coordinate coordinate)
+        {            
+            if (coordinate.X < 0 || coordinate.Y < 0)
+                return false;
 
-        private List<Robot> robots { get; set; }
-
-        public void AddRobot(Robot robot)
-        {
-            robots.Add(robot);
+            return coordinate.X <= width && coordinate.Y <= height;
         }
     }
 }

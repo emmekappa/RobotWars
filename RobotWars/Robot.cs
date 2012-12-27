@@ -1,14 +1,19 @@
 ﻿namespace RobotWars
 {
+    /// <summary>
+    /// The Robot entity.    
+    /// </summary>
     public class Robot
     {
         private Coordinate coordinate;
         private IDirection direction;
-        
-        public Robot(Coordinate coordinate, IDirection direction)
+        private readonly Arena arena;
+
+        public Robot(Coordinate coordinate, IDirection direction, Arena arena)
         {
             this.coordinate = coordinate;
             this.direction = direction;
+            this.arena = arena;
         }
 
         public Coordinate Coordinate
@@ -30,7 +35,7 @@
         {
             direction = direction.RotateRight();
         }
-
+        
         public void MoveForward()
         {
             coordinate = direction.MoveForward(coordinate);
