@@ -11,10 +11,8 @@ namespace RobotWars.Console
         static void Main(string[] args)
         {
             var arena = new Arena(5, 5);
-            var robotA = new Robot(new Coordinate(1, 2), new NorthDirection());
-            var robotB = new Robot(new Coordinate(3, 3), new EastDirection());
-            arena.AddRobot(robotA);
-            arena.AddRobot(robotB);
+            var robotA = new Robot(new Coordinate(1, 2), new NorthDirection(), new Arena(5,5));
+            var robotB = new Robot(new Coordinate(3, 3), new EastDirection(), new Arena(5, 5));
             
             robotA.RotateLeft();
             robotA.MoveForward();
