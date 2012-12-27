@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RobotWars.Tests.Parser
+namespace RobotWars.Console
 {
     public class MovementParser
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RobotWars.Tests.Parser
+namespace RobotWars.Console
 {
     public static class DirectionFactory
     {

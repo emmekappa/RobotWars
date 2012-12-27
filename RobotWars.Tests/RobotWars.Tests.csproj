@@ -54,8 +54,7 @@
   <ItemGroup>
     <Compile Include="ArenaTests.cs" />
     <Compile Include="Console\DirectionFactoryTests.cs" />
-    <Compile Include="Console\MovementInstructionParserTests.cs" />
-    <Compile Include="Console\MovementParser.cs" />
+    <Compile Include="Console\MovementParserTests.cs" />
     <Compile Include="CoordinateTests.cs" />
     <Compile Include="EastDirectionTests.cs" />
     <Compile Include="NorthDirectionTests.cs" />

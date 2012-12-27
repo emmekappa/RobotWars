@@ -1,4 +1,4 @@
-﻿namespace RobotWars.Tests.Parser
+﻿namespace RobotWars
 {
     public interface IMovement
     {
