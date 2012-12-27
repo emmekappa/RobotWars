@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArenaParser.cs" />
+    <Compile Include="DirectionFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotLocationParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -43,6 +43,8 @@
     <Compile Include="Coordinate.cs" />
     <Compile Include="EastDirection.cs" />
     <Compile Include="DirectionBase.cs" />
+    <Compile Include="InvalidArenaSizeException.cs" />
+    <Compile Include="OutOfArenaException.cs" />
     <Compile Include="NorthDirection.cs" />
     <Compile Include="Robot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

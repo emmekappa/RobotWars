@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RobotWars
+﻿namespace RobotWars
 {
     /// <summary>
     ///     The Robot entity.
@@ -26,9 +24,9 @@ namespace RobotWars
         /// <summary>
         ///     A string rappresenting the Robot direction
         /// </summary>
-        public string Direction
+        public DirectionBase Direction
         {
-            get { return direction.ToString(); }
+            get { return direction; }
         }
 
         public void RotateLeft()
@@ -45,7 +43,7 @@ namespace RobotWars
         {
             Coordinate newRobotPosition = direction.MoveForward(position);
             if (!arena.IsInside(newRobotPosition))
-                throw new InvalidOperationException("Position out of the arena");
+                throw new OutOfArenaException();
             position = newRobotPosition;
         }
     }

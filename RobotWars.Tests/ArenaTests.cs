@@ -1,6 +1,10 @@
 ﻿using NUnit.Framework;
 using SharpTestsEx;
 
+namespace RobotWars
+{
+}
+
 namespace RobotWars.Tests
 {
     [TestFixture]
@@ -36,6 +40,18 @@ namespace RobotWars.Tests
         {
             arena10x15.IsInside(new Coordinate(x, y))
                       .Should().Be.True();
+        }
+
+        [Test]
+        [TestCase(-1, 5)]
+        [TestCase(1, -5)]
+        [TestCase(-5, -5)]
+        [TestCase(0, 5)]
+        [TestCase(5, 0)]
+        [TestCase(0, 0)]        
+        public void Constructor_should_throw_when_width_or_height_are_not_greater_than_zero(int width, int height)
+        {
+            Assert.Throws<InvalidArenaSizeException>(() => new Arena(width, height));
         }
     }
 }

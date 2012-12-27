@@ -31,7 +31,7 @@ namespace RobotWars.Tests.Scenarios
 
             robotB.Coordinate.X.Should().Be.EqualTo(5);
             robotB.Coordinate.Y.Should().Be.EqualTo(1);
-            robotB.Direction.Should().Be.EqualTo("E");
+            robotB.Direction.Should().Be.OfType<EastDirection>();
         }
     }
 }

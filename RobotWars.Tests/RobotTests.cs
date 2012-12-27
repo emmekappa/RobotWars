@@ -46,7 +46,7 @@ namespace RobotWars.Tests
                 .Setup(x => x.IsInside(newPosition))
                 .Returns(false);
 
-            Assert.Throws<InvalidOperationException>(() => robot.MoveForward());
+            Assert.Throws<OutOfArenaException>(() => robot.MoveForward());
         }
 
         [Test]
