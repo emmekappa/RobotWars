@@ -19,7 +19,7 @@
         /// </summary>
         /// <param name="coordinate">The coordinate to check.</param>
         /// <returns>true when the coordinate is inside the arena.</returns>
-        public bool IsInside(Coordinate coordinate)
+        public virtual bool IsInside(Coordinate coordinate)
         {
             if (coordinate.X < 0 || coordinate.Y < 0)
                 return false;

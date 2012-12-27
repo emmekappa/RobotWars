@@ -7,8 +7,8 @@
     /// <seealso cref="Robot" />
     public abstract class DirectionBase
     {
-        internal abstract Coordinate MoveForward(Coordinate coordinate);
-        internal abstract DirectionBase RotateRight();
-        internal abstract DirectionBase RotateLeft();
+        protected internal abstract Coordinate MoveForward(Coordinate coordinate);
+        protected internal abstract DirectionBase RotateRight();
+        protected internal abstract DirectionBase RotateLeft();
     }
 }

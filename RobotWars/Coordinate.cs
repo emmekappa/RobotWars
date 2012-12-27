@@ -29,5 +29,26 @@
         {
             return new Coordinate(x, y);
         }
+
+        protected bool Equals(Coordinate other)
+        {
+            return x == other.x && y == other.y;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Coordinate) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (x*397) ^ y;
+            }
+        }
     }
 }
