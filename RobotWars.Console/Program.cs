@@ -4,6 +4,8 @@
     {
         private static void Main(string[] args)
         {
+            var arenaSizeInput = System.Console.ReadLine();            
+
             var arena = new Arena(5, 5);
             var robotA = new Robot(new Coordinate(1, 2), new NorthDirection(), new Arena(5, 5));
             var robotB = new Robot(new Coordinate(3, 3), new EastDirection(), new Arena(5, 5));
