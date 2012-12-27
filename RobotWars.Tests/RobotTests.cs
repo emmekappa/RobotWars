@@ -1,20 +1,15 @@
-﻿using System;
-using Moq;
-using NUnit.Framework;
-
-namespace RobotWars.Tests
+﻿namespace RobotWars.Tests
 {
+    using Moq;
+    using NUnit.Framework;
+
     [TestFixture]
     public class RobotTests
     {
-        private Robot robot;
-        private Mock<DirectionBase> directionMock;
-        private Mock<Arena> arenaMock;
-
         [SetUp]
-         public void SetUp()
+        public void SetUp()
         {
-            arenaMock = new Mock<Arena>(5,5);
+            arenaMock = new Mock<Arena>(5, 5);
             arenaMock
                 .Setup(x => x.IsInside(It.IsAny<Coordinate>()))
                 .Returns(true);
@@ -22,17 +17,21 @@ namespace RobotWars.Tests
             directionMock = new Mock<DirectionBase>();
             directionMock
                 .Setup(x => x.MoveForward(It.IsAny<Coordinate>()))
-                .Returns(new Coordinate(0,0));
+                .Returns(new Coordinate(0, 0));
 
             robot = new Robot(new Coordinate(5, 5), directionMock.Object, arenaMock.Object);
         }
 
+        private Robot robot;
+        private Mock<DirectionBase> directionMock;
+        private Mock<Arena> arenaMock;
+
         [Test]
         public void MoveForward_should_dispatch_call_to_Direction()
-        {           
+        {
             robot.MoveForward();
 
-            directionMock.Verify(x => x.MoveForward(new Coordinate(5,5)));
+            directionMock.Verify(x => x.MoveForward(new Coordinate(5, 5)));
         }
 
         [Test]
@@ -63,6 +62,6 @@ namespace RobotWars.Tests
             robot.RotateRight();
 
             directionMock.Verify(x => x.RotateRight());
-        }        
+        }
     }
 }

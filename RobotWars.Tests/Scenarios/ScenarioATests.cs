@@ -1,8 +1,8 @@
-﻿using NUnit.Framework;
-using SharpTestsEx;
-
-namespace RobotWars.Tests.Scenarios
+﻿namespace RobotWars.Tests.Scenarios
 {
+    using NUnit.Framework;
+    using SharpTestsEx;
+
     [TestFixture]
     [Category("Functional")]
     public class ScenarioATests

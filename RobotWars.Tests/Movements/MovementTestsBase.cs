@@ -1,8 +1,8 @@
-﻿using Moq;
-using NUnit.Framework;
-
-namespace RobotWars.Tests.Movements
+﻿namespace RobotWars.Tests.Movements
 {
+    using Moq;
+    using NUnit.Framework;
+
     public class MovementTestsBase
     {
         protected Mock<Robot> RobotMock;

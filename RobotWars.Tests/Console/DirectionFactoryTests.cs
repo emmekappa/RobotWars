@@ -1,10 +1,10 @@
-﻿using System;
-using NUnit.Framework;
-using RobotWars.Console;
-using SharpTestsEx;
-
-namespace RobotWars.Tests.Console
+﻿namespace RobotWars.Tests.Console
 {
+    using System;
+    using NUnit.Framework;
+    using RobotWars.Console;
+    using SharpTestsEx;
+
     [TestFixture]
     public class DirectionFactoryTests
     {

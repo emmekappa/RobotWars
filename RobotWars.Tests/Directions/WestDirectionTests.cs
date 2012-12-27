@@ -1,8 +1,8 @@
-﻿using NUnit.Framework;
-using SharpTestsEx;
-
-namespace RobotWars.Tests
+﻿namespace RobotWars.Tests.Directions
 {
+    using NUnit.Framework;
+    using SharpTestsEx;
+
     [TestFixture]
     public class WestDirectionTests
     {

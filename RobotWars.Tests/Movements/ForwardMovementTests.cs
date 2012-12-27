@@ -1,7 +1,7 @@
-﻿using NUnit.Framework;
-
-namespace RobotWars.Tests.Movements
+﻿namespace RobotWars.Tests.Movements
 {
+    using NUnit.Framework;
+
     [TestFixture]
     public class ForwardMovementTests : MovementTestsBase
     {

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RobotWars.Utilities
+﻿namespace RobotWars.Utilities
 {
+    using System;
+    using System.Collections.Generic;
+
     public static class IEnumerableExtensions
     {
         public static void ForEach<T>(this IEnumerable<T> enumeration, Action<T> action)
@@ -11,6 +11,6 @@ namespace RobotWars.Utilities
             {
                 action(item);
             }
-        } 
+        }
     }
 }

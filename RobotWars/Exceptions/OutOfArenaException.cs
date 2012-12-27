@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace RobotWars
+﻿namespace RobotWars
 {
+    using System;
+
     public class OutOfArenaException : Exception
     {
         public OutOfArenaException()

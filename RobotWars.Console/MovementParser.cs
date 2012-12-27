@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace RobotWars.Console
+﻿namespace RobotWars.Console
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public static class MovementParser
     {
         public static IEnumerable<IMovement> Parse(string input)
