@@ -41,16 +41,21 @@
   <ItemGroup>
     <Compile Include="Arena.cs" />
     <Compile Include="Coordinate.cs" />
-    <Compile Include="EastDirection.cs" />
-    <Compile Include="DirectionBase.cs" />
-    <Compile Include="InvalidArenaSizeException.cs" />
-    <Compile Include="OutOfArenaException.cs" />
-    <Compile Include="NorthDirection.cs" />
+    <Compile Include="Directions\EastDirection.cs" />
+    <Compile Include="Directions\DirectionBase.cs" />
+    <Compile Include="Movements\ForwardMovement.cs" />
+    <Compile Include="Movements\IMovement.cs" />
+    <Compile Include="Exceptions\InvalidArenaSizeException.cs" />
+    <Compile Include="Movements\LeftMovement.cs" />
+    <Compile Include="Exceptions\OutOfArenaException.cs" />
+    <Compile Include="Directions\NorthDirection.cs" />
+    <Compile Include="Movements\RightMovement.cs" />
     <Compile Include="Robot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SouthDirection.cs" />
-    <Compile Include="WestDirection.cs" />
+    <Compile Include="Directions\SouthDirection.cs" />
+    <Compile Include="Directions\WestDirection.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
