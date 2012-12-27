@@ -36,7 +36,7 @@ namespace RobotWars.Tests
         }
 
         [Test]
-        public void Equals_should_return_false_when_YXs_are_differents()
+        public void Equals_should_return_false_when_Ys_are_differents()
         {
             new Coordinate(10, 5)
                 .Should().Not.Be.EqualTo(new Coordinate(10, 6));
