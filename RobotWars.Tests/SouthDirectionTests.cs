@@ -31,5 +31,12 @@ namespace RobotWars.Tests
             newPosition.X
                        .Should().Be.EqualTo(5);
         }
+
+        [Test]
+        public void RotateLeft_should_return_EastDirection()
+        {
+            southDirection.RotateLeft()
+                .Should().Be.OfType<EastDirection>();
+        }
     }
 }
