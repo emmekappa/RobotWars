@@ -1,40 +1,33 @@
-﻿namespace RobotWars.Console
+﻿using System.Collections.Generic;
+using RobotWars.Utilities;
+
+namespace RobotWars.Console
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            var arenaSizeInput = System.Console.ReadLine();            
+            System.Console.WriteLine("Type Arena size (ex: 5 5)");
+            Arena arena = ArenaParser.Parse(System.Console.ReadLine());
 
-            var arena = new Arena(5, 5);
-            var robotA = new Robot(new Coordinate(1, 2), new NorthDirection(), new Arena(5, 5));
-            var robotB = new Robot(new Coordinate(3, 3), new EastDirection(), new Arena(5, 5));
+            var robotLocationParser = new RobotLocationParser(arena);
 
-            robotA.RotateLeft();
-            robotA.MoveForward();
-            robotA.RotateLeft();
-            robotA.MoveForward();
-            robotA.RotateLeft();
-            robotA.MoveForward();
-            robotA.RotateLeft();
-            robotA.MoveForward();
-            robotA.MoveForward();
+            System.Console.WriteLine("Type Robot A location (ex: 1 2 N)");
+            Robot robotA = robotLocationParser.Parse(System.Console.ReadLine());
+            System.Console.WriteLine("Type Robot A movements (ex: LMLRM)");
+            IEnumerable<IMovement> robotAMovements = MovementParser.Parse(System.Console.ReadLine());
+            robotAMovements.ForEach(x => x.ExecuteOn(robotA));
 
-            robotB.MoveForward();
-            robotB.MoveForward();
-            robotB.RotateRight();
-            robotB.MoveForward();
-            robotB.MoveForward();
-            robotB.RotateRight();
-            robotB.MoveForward();
-            robotB.RotateRight();
-            robotB.RotateRight();
-            robotB.MoveForward();
+            System.Console.WriteLine("Type Robot B location (ex: 1 2 N)");
+            Robot robotB = robotLocationParser.Parse(System.Console.ReadLine());
+            System.Console.WriteLine("Type Robot B movements (ex: LMLRM)");
+            IEnumerable<IMovement> robotBMovements = MovementParser.Parse(System.Console.ReadLine());
+            robotBMovements.ForEach(x => x.ExecuteOn(robotB));
 
-            System.Console.WriteLine("RobotA X: {0} Y: {1} Facing: {2}", robotA.Coordinate.X, robotA.Coordinate.Y,
-                                     robotA.Direction);
-            System.Console.WriteLine("RobotA X: {0} Y: {1} Facing: {2}", robotB.Coordinate.X, robotB.Coordinate.Y,
-                                     robotB.Direction);
+            System.Console.WriteLine("{0} {1} {2}", robotA.Coordinate.X, robotA.Coordinate.Y, robotA.Direction);
+            System.Console.WriteLine("{0} {1} {2}", robotB.Coordinate.X, robotB.Coordinate.Y, robotB.Direction);
+
+            System.Console.ReadLine();
         }
     }
 }

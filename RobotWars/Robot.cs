@@ -29,17 +29,17 @@
             get { return direction; }
         }
 
-        public void RotateLeft()
+        public virtual void RotateLeft()
         {
             direction = direction.RotateLeft();
         }
 
-        public void RotateRight()
+        public virtual void RotateRight()
         {
             direction = direction.RotateRight();
         }
 
-        public void MoveForward()
+        public virtual void MoveForward()
         {
             Coordinate newRobotPosition = direction.MoveForward(position);
             if (!arena.IsInside(newRobotPosition))
